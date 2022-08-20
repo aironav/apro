@@ -1,0 +1,41 @@
+a = 10
+b = a
+  
+if id(a) == id(b):
+    print("a and b refer to the same object")
+    
+ Here a and b refer to same object 
+a = b will create another reference variable b which will refer to the same object because Python optimizes memory utilization by allocation the same object reference to a new variable if the object already exists with the same value
+
+a = 10
+b = a
+a += 1
+  
+if id(a) != id(b):
+    print("a and b do not refer to the same object")
+Output:
+
+a and b do not refer to the same object
+So now a refer to a new object a and the link between a and 10 disconnected but b still refer to 10.
+
+There are two parts of memory:
+
+stack memory
+heap memory
+
+The methods/method calls and the references are stored in stack memory and all the values objects are stored in a private heap.
+
+Work of Stack Memory
+
+The allocation happens on contiguous blocks of memory. We call it stack memory allocation because the allocation happens in the function call stack. The size of memory to be allocated is known to the compiler and whenever a function is called, its variables get memory allocated on the stack.
+
+It is the memory that is only needed inside a particular function or method call. When a function is called, it is added onto the program’s call stack. Any local memory assignments such as variable initializations inside the particular functions are stored temporarily on the function call stack, where it is deleted once the function returns, and the call stack moves on to the next task. This allocation onto a contiguous block of memory is handled by the compiler using predefined routines, and developers do not need to worry about it.
+
+
+
+
+
+Work of Heap Memory
+
+The memory is allocated during the execution of instructions written by programmers. Note that the name heap has nothing to do with the heap data structure. It is called heap because it is a pile of memory space available to programmers to allocated and de-allocate. The variables are needed outside of method or function calls or are shared within multiple functions globally are stored in Heap memory.
+
